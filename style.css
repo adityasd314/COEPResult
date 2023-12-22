@@ -82,20 +82,5 @@ body {
   pointer-events: auto;
   opacity: 1;
 }
-body {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background-color: #efa94a;
-  overflow: hidden;
-  margin-top: 10vh;
-}
-#result {
-    position: absolute;
-    height: 71vh;
-    /* overflow-y: scroll; */
-    bottom: 8vh;
-    width: 85%;
-    overflow-x: normal;
-}
+
+
