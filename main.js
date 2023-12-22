@@ -42,5 +42,5 @@ const getByMIS = (n) => {
     const subjectWise = Object.fromEntries(string.split(" ").filter(x => x.slice(0, x.length - 4) in subjectMapping).map((x) => [x.substring(0, x.length - 4), x.substring(x.length - 3, x.length - 1)]).map((x) => [subjectMapping[x[0]], pointer(x.slice(1).join("")) +" : "+ (x.slice(1).join(""))]));
     return ({ details, score, subjectWise })
 }
-alert()
+
 
