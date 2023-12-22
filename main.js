@@ -21,6 +21,17 @@ const getByMISThreeDigits = (n) => {
     const subjectWise = Object.fromEntries(db[n].split(" ").filter(x => x.slice(0, x.length - 4) in subjectMapping).map((x) => [x.substring(0, x.length - 4), x.substring(x.length - 3, x.length - 1)]).map((x) => [subjectMapping[x[0]], x.slice(1).join("")]));
     return ({ details, score, subjectWise })
 }
+const grade = {
+    "A":5,
+    "B":4,
+    "C":3,
+    "D":2,
+    "E":1,
+    "F":0,
+}
+const pointer = (string)=>{
+    return string.split("").reduce((t, x)=>t+grade[x], 0);
+}
 const getByMIS = (n) => {
     const string = (db.filter((x) => x.split(" ")[1] == n)[0])
     console.log(string)
@@ -28,6 +39,6 @@ const getByMIS = (n) => {
     const score = getSGCG(string)
     console.log({ details })
     console.log({ score })
-    const subjectWise = Object.fromEntries(string.split(" ").filter(x => x.slice(0, x.length - 4) in subjectMapping).map((x) => [x.substring(0, x.length - 4), x.substring(x.length - 3, x.length - 1)]).map((x) => [subjectMapping[x[0]], x.slice(1).join("")]));
+    const subjectWise = Object.fromEntries(string.split(" ").filter(x => x.slice(0, x.length - 4) in subjectMapping).map((x) => [x.substring(0, x.length - 4), x.substring(x.length - 3, x.length - 1)]).map((x) => [subjectMapping[x[0]], pointer(x.slice(1).join("")) +" : "+ (x.slice(1).join(""))]));
     return ({ details, score, subjectWise })
 }
