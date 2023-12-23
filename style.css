@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
 
   background-color: #efa94a;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .input-box {
   position: relative;
