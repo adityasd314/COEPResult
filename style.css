@@ -66,6 +66,6 @@ pre{
 }
 div#result {
   margin: 2rem;
-  height: 75vh;
+  height: 80vh;
   overflow-y: scroll;
 }
