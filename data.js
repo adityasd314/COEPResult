@@ -2686,4 +2686,26 @@ DESHPANDE 22 22 106 723 6.64 6.82 R AS(HS)-21005(BC) ML-21002(PP) PL(DE)-21010(B
 6 112114004 SHENDE YASH GHANSHAM 22 22 106 753 6.82 7.10 R AS(HS)-21007(DD) EE(MI)-21004(BB) ML-21002(PP) PL(DE)-21010(BC) PL-21001(CD) PL-21002(AA) PL-21003(BB) PL-21004(BC) PL-21005(BC) PL-21006(CC)
 7 112114005 YADNESH JAYANT SHASTRI 22 22 106 864 7.18 8.15 R AS(HS)-21008(CD) MA(MI)-22001(DD) ML-21002(PP) PL(DE)-21010(AA) PL-21001(BC) PL-21002(BB) PL-21003(BC) PL-21004(BC) PL-21005(BC) PL-21006(CC)`
 ]
-const db = [...secondYearDB, ...thirdYearDB].map(x=>x.split("\n").map(x=>x.trim()).filter((x) => !isNaN(x.split(" ")[0]))).flat()
+const db = [...secondYearDB, ...thirdYearDB].map(x=>{
+    let temp = x.split("\n").map(x=>x.trim())
+    temp.forEach((x,i,arr)=>{
+        const decimalPattern = /\b\d+\.\d+\b/g;
+       const decimalMatches = x.match(decimalPattern);
+       const isFirstNumber = !isNaN(x.split(" ")[0]);
+       const courseNamePattern = /[A-Z]{2}-[0-9]{5}/g
+       const isCoursePresent = x.match(courseNamePattern)
+        
+       if(!isFirstNumber && (decimalMatches ||isCoursePresent ) ){
+            let k = i - 1;
+            while(k >= 0 && isNaN(arr[k].split(" ")[0])){
+                k--;
+            }
+            console.log(temp[k])
+            console.log(k)
+           temp[k] += ` ${temp[i]}`
+           
+       }
+   })
+    
+    return temp.filter((x) => !isNaN(x.split(" ")[0]))
+}).flat()

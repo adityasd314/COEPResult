@@ -29,6 +29,8 @@ const grade = {
     "F": 0,
 }
 const pointer = (string) => {
+    if(string == "PP")return "Pass";
+    if(string == "NR")return "Not Registered";
     return string.split("").reduce((t, x) => t + grade[x], 0);
 }
 const getByMIS = (n) => {
