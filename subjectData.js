@@ -1,5 +1,5 @@
 
-const temps = [`1 AS-19001 Applied Chemistry 3
+const secondYearSubjects = [`1 AS-19001 Applied Chemistry 3
 2 CT-20002 Development Tools Laboratory 2
 3 CT-20003 Data Structures and Algorithms ±I 2
 4 CT-20004 Data Structures and Algorithms -I Laboratory 1
@@ -146,4 +146,327 @@ Calculus 3
 16 MT-20021 Mechanical Technology Laboratory 1
 17 PH-19001 Optics and Modern Physics 3
 18 PH-19002 Optics and Modern Physics Laboratory 1
-19 PH-20001 Foundation of Physics 3`].map(x => x.split("\n").map((x) => x.split(" ").slice(1)))
+19 PH-20001 Foundation of Physics 3`]
+
+const thirdYearSubjects = [`1 AS(HS)-21005 Industrial Psychology 2
+2 AS(HS)-21007 Engineering Economics 2
+3 AS(HS)-21008 Finance for Engineers 2
+4 CE(HO)-21002 Advanced Building Design 3
+5 CE(HO)-21003 Land and Water Management Engineering 3
+6 CE-20004 Fluid Mechanics 4
+7 CE-21001 Survey Camp 1
+8 CE-21002 Geotechnical Engineering 4
+9 CE-21003 Transportation Engineering 4
+10 CE-21004 Design of Steel Structures 3
+11 CE-21005 Engineering Geology 3
+12 CE-21006 Transportation Engineering Laboratory 1
+13 CE-21007 Design of Steel Structures Laboratory 1
+14 CE-21008 Engineering Geology Laboratory 1
+15 CE-21009 Geotechnical Engineering Laboratory 1
+16 CT(MI)-21001 Data Structures, Files and Algorithms 3
+17 EE(MI)-21004 Solar Energy Systems 3
+18 EE-19002 Basic Electrical Engineering 3
+19 ETC(IF)-21001 Internet of Things and Applications 2
+20 ETC(MI)-21001 Microcontrollers 3
+21 IE(MI)-21001 Sensors and Actuators 3
+22 MA(MI)-22001 Numerical Methods in Finance 3
+23 MA-19002 Linear Algebra 3
+24 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+25 ML-21002 Environmental Studies 0
+26 PH-19001 Optics and Modern Physics 3
+`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(HO)-21001 Making Sense of Data 3
+6 CT(HO)-21002 Fundamentals of Information and Coding Theory 3
+7 CT-20003 Data Structures and Algorithms ±I 2
+8 CT-20005 Digital Logic Design 3
+9 CT-21001 Database Management Systems 3
+10 CT-21002 Database Management Systems Laboratory 1
+11 CT-21003 Artificial Intelligence 3
+12 CT-21004 Artificial Intelligence Laboratory 1
+13 CT-21005 Computer Networks 3
+14 CT-21006 Computer Networks Laboratory 1
+15 CT-21007 Computer Organization 3
+16 CT-21009 Software Engineering: Mini Project - Stage 1 2
+17 ETC-19001 Electronics and Computer Workshop 1
+18 HS-19002 Design Thinking 1
+19 HS-21001 Entrepreneurship Principles and Process 1
+20 MA(MI)-22001 Numerical Methods in Finance 3
+21 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+22 MA-21001 Probability and Statistics for Engineers 3
+23 MFG(IF)-22001 Fundamentals of Robotics 2
+24 ML-20004 Professional Laws, Ethics, Values and Harmony 0
+25 ML-21001 Constitution of India 0
+26 PH-19002 Optics and Modern Physics Laboratory 1`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(IF)-21003 Fundamentals of Operating Systems 2
+6 CT(MI)-21001 Data Structures, Files and Algorithms 3
+7 EE(HO)-21001 Engineering Optimization 3
+8 EE(MI)-21004 Solar Energy Systems 3
+9 EE-20004 Solid State Devices and Linear Circuits 3
+10 EE-20005 Electrical Circuit Analysis 3
+11 EE-21001 Signal Processing 3
+12 EE-21002 Microcontrollers 3
+13 EE-21003 Synchronous Machines 4
+14 EE-21004 Power System Analysis 3
+15 EE-21005 Signal Processing Laboratory 1
+16 EE-21006 Synchronous Machines Laboratory 1
+17 EE-21007 Power System Analysis Laboratory 1
+18 EE-21008 Microcontroller Laboratory 1
+19 ET(DE)-22003 Electric Vehicle Technologies 3
+20 ETC(MI)-21001 Microcontrollers 3
+21 HS-21001 Entrepreneurship Principles and Process 1
+22 IE(MI)-21001 Sensors and Actuators 3
+23 MA(MI)-22001 Numerical Methods in Finance 3
+24 MA-19002 Linear Algebra 3
+25 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+26 MA-21001 Probability and Statistics for Engineers 3
+27 ML-21001 Constitution of India 0
+28 MM(IF)-20001 Smart Materials 2
+`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(IF)-21001 Data Analytics 2
+6 CT(MI)-21001 Data Structures, Files and Algorithms 3
+7 EE(MI)-21004 Solar Energy Systems 3
+8 ET-20003 Digital System Design 3
+9 ET-20004 Signals and Systems 3
+10 ET-20007 Digital System Design Lab 1
+11 ET-21001 R and Python Programming Lab 1
+12 ET-21002 Digital Signal Processing 3
+13 ET-21003 Digital Communication Systems 3
+14 ET-21004 Configurable Logic & Processor Design 4
+15 ET-21005 Electromagnetic Waves and Antennas 3
+16 ET-21006 Digital Signal Processing Lab 1
+17 ET-21007 Digital Communication Systems Lab 1
+18 ET-21008 Configurable Logic & Processor Design Lab 1
+19 HS-19001 Effective Communication Skills 1
+20 HS-21001 Entrepreneurship Principles and Process 1
+21 IE(MI)-21001 Sensors and Actuators 3
+22 MA(MI)-22001 Numerical Methods in Finance 3
+23 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+24 MA-20002 Linear Algebra and Univariate Calculus 5
+25 MA-21001 Probability and Statistics for Engineers 3
+26 ML-21001 Constitution of India 0`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(IF)-21002 Fundamentals of Machine Learning 2
+6 CT(MI)-21001 Data Structures, Files and Algorithms 3
+7 EE(MI)-21004 Solar Energy Systems 3
+8 ETC(MI)-21001 Microcontrollers 3
+9 HS-21001 Entrepreneurship Principles and Process 1
+10 IE-20002 Analog Electronics 3
+11 IE-20003 Electrical and Electronics Measurement 3
+12 IE-21001 Microprocessors and Microcontrollers 3
+13 IE-21002 Process Loop Components 3
+14 IE-21003 Control System Design 3
+15 IE-21004 Digital Signal Processing 3
+16 IE-21005 Microprocessors and Microcontrollers Lab 1
+17 IE-21006 Process Loop Components Lab 1
+18 IE-21007 Control System Design Lab 1
+19 IE-21008 Digital Signal Processing Lab 1
+20 MA(MI)-22001 Numerical Methods in Finance 3
+21 MA-19002 Linear Algebra 3
+22 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+23 MA-20002 Linear Algebra and Univariate Calculus 5
+24 MA-21001 Probability and Statistics for Engineers 3
+25 ML-21001 Constitution of India 0
+26 PH-20001 Foundation of Physics 3`,`1 AS(HS)-21005 Industrial Psychology 2
+2 AS(HS)-21007 Engineering Economics 2
+3 AS(HS)-21008 Finance for Engineers 2
+4 CE(HO)-21002 Advanced Building Design 3
+5 CE(HO)-21003 Land and Water Management Engineering 3
+6 CE-20004 Fluid Mechanics 4
+7 CE-21001 Survey Camp 1
+8 CE-21002 Geotechnical Engineering 4
+9 CE-21003 Transportation Engineering 4
+10 CE-21004 Design of Steel Structures 3
+11 CE-21005 Engineering Geology 3
+12 CE-21006 Transportation Engineering Laboratory 1
+13 CE-21007 Design of Steel Structures Laboratory 1
+14 CE-21008 Engineering Geology Laboratory 1
+15 CE-21009 Geotechnical Engineering Laboratory 1
+16 CT(MI)-21001 Data Structures, Files and Algorithms 3
+17 EE(MI)-21004 Solar Energy Systems 3
+18 EE-19002 Basic Electrical Engineering 3
+19 ETC(IF)-21001 Internet of Things and Applications 2
+20 ETC(MI)-21001 Microcontrollers 3
+21 IE(MI)-21001 Sensors and Actuators 3
+22 MA(MI)-22001 Numerical Methods in Finance 3
+23 MA-19002 Linear Algebra 3
+24 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+25 ML-21002 Environmental Studies 0
+26 PH-19001 Optics and Modern Physics 3
+`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(HO)-21001 Making Sense of Data 3
+6 CT(HO)-21002 Fundamentals of Information and Coding Theory 3
+7 CT-20003 Data Structures and Algorithms ±I 2
+8 CT-20005 Digital Logic Design 3
+9 CT-21001 Database Management Systems 3
+10 CT-21002 Database Management Systems Laboratory 1
+11 CT-21003 Artificial Intelligence 3
+12 CT-21004 Artificial Intelligence Laboratory 1
+13 CT-21005 Computer Networks 3
+14 CT-21006 Computer Networks Laboratory 1
+15 CT-21007 Computer Organization 3
+16 CT-21009 Software Engineering: Mini Project - Stage 1 2
+17 ETC-19001 Electronics and Computer Workshop 1
+18 HS-19002 Design Thinking 1
+19 HS-21001 Entrepreneurship Principles and Process 1
+20 MA(MI)-22001 Numerical Methods in Finance 3
+21 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+22 MA-21001 Probability and Statistics for Engineers 3
+23 MFG(IF)-22001 Fundamentals of Robotics 2
+24 ML-20004 Professional Laws, Ethics, Values and Harmony 0
+25 ML-21001 Constitution of India 0
+26 PH-19002 Optics and Modern Physics Laboratory 1`,`1 AS(HS)-21005 Industrial Psychology 2
+2 AS(HS)-21007 Engineering Economics 2
+3 AS(HS)-21008 Finance for Engineers 2
+4 CT(MI)-21001 Data Structures, Files and Algorithms 3
+5 EE(MI)-21004 Solar Energy Systems 3
+6 MA(MI)-22001 Numerical Methods in Finance 3
+7 ML-21002 Environmental Studies 0
+8 PL(DE)-21010 Place Making and Urban Design 3
+9 PL-19002 Demography and Urbanization 3
+10 PL-21001 Land Economics and Valuation 3
+11 PL-21002 Planning Legislation - I 3
+12 PL-21003 Planning Practice 3
+13 PL-21004 Geo-Informatics - II 3
+14 PL-21005 Summer Project 1
+15 PL-21006 Planning and Design Studio±V 4
+`,`1 AS(HS)-21005 Industrial Psychology 2
+2 AS(HS)-21007 Engineering Economics 2
+3 AS(HS)-21008 Finance for Engineers 2
+4 CE-19001 Engineering Mechanics Laboratory 1
+5 CT(MI)-21001 Data Structures, Files and Algorithms 3
+6 ETC(IF)-21001 Internet of Things and Applications 2
+7 IE(MI)-21001 Sensors and Actuators 3
+8 MA(MI)-22001 Numerical Methods in Finance 3
+9 MA-19002 Linear Algebra 3
+10 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+11 ME-19002 Engineering Graphics and Design 4
+12 ML-21002 Environmental Studies 0
+13 MT(HO)-21002 Advanced Composites 3
+14 MT-20016 Structure and Properties of Materials 3
+15 MT-20017 Principles of Physical Metallurgy 3
+16 MT-20018 Introduction to Ceramics Engineering 3
+17 MT-21016 Heat Treatment Technology Laboratory 1
+18 MT-21017 Heat Treatment Technology 3
+19 MT-21018 Mineral Processing and Extractive Metallurgy 4
+20 MT-21019 Iron Making 3
+21 MT-21020 Materials Characterization 3
+22 MT-21021 Transport Phenomena 4
+23 MT-21022 Mineral Processing and Extractive Metallurgy
+Laboratory 1
+24 MT-21023 Materials Characterization Laboratory 1
+25 MT-21024 Materials Software Tools Laboratory 1
+26 PH-19002 Optics and Modern Physics Laboratory 1`,`1 AS(HS)-21005 Industrial Psychology 2
+2 AS(HS)-21007 Engineering Economics 2
+3 AS(HS)-21008 Finance for Engineers 2
+4 CE-19002 Engineering Mechanics 4
+5 CT(IF)-21001 Data Analytics 2
+6 CT(MI)-21001 Data Structures, Files and Algorithms 3
+7 EE(MI)-21004 Solar Energy Systems 3
+8 ETC(MI)-21001 Microcontrollers 3
+9 IE(MI)-21001 Sensors and Actuators 3
+10 MA(MI)-22001 Numerical Methods in Finance 3
+11 MA-19002 Linear Algebra 3
+12 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+13 MA-21001 Probability and Statistics for Engineers 3
+14 ME(HO)-21001 Automotive Engineering Systems 3
+15 ME-20003 Engineering Thermodynamics 3
+16 ME-20007 Strength of Materials 3
+17 ME-21001 Fluid Machinery and Fluid Power 4
+18 ME-21002 Metrology and Mechanical Measurements 3
+19 ME-21003 Heat Transfer 3
+20 ME-21004 Design of Machine Components 4
+21 ME-21005 Fluid Machinery and Fluid Power Lab 1
+22 ME-21006 Metrology and Mechanical Measurements Lab 1
+23 ME-21007 Heat Transfer Lab 1
+24 ME-21008 Skill Based Course of the domain: Design of
+Machine Components 1
+25 ML-21002 Environmental Studies 0
+26 MM(IF)-20001 Smart Materials 2`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(IF)-21002 Fundamentals of Machine Learning 2
+6 CT(MI)-21001 Data Structures, Files and Algorithms 3
+7 EE(MI)-21004 Solar Energy Systems 3
+8 ETC(MI)-21001 Microcontrollers 3
+9 HS-21001 Entrepreneurship Principles and Process 1
+10 IE-20002 Analog Electronics 3
+11 IE-20003 Electrical and Electronics Measurement 3
+12 IE-21001 Microprocessors and Microcontrollers 3
+13 IE-21002 Process Loop Components 3
+14 IE-21003 Control System Design 3
+15 IE-21004 Digital Signal Processing 3
+16 IE-21005 Microprocessors and Microcontrollers Lab 1
+17 IE-21006 Process Loop Components Lab 1
+18 IE-21007 Control System Design Lab 1
+19 IE-21008 Digital Signal Processing Lab 1
+20 MA(MI)-22001 Numerical Methods in Finance 3
+21 MA-19002 Linear Algebra 3
+22 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+23 MA-20002 Linear Algebra and Univariate Calculus 5
+24 MA-21001 Probability and Statistics for Engineers 3
+25 ML-21001 Constitution of India 0
+26 PH-20001 Foundation of Physics 3`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(IF)-21001 Data Analytics 2
+6 CT(MI)-21001 Data Structures, Files and Algorithms 3
+7 EE(MI)-21004 Solar Energy Systems 3
+8 ET-20003 Digital System Design 3
+9 ET-20004 Signals and Systems 3
+10 ET-20007 Digital System Design Lab 1
+11 ET-21001 R and Python Programming Lab 1
+12 ET-21002 Digital Signal Processing 3
+13 ET-21003 Digital Communication Systems 3`,`1 AS(HS)-21001 English Proficiency Language 2
+2 AS(HS)-21002 German Language 2
+3 AS(HS)-21003 Japanese Language 2
+4 AS(HS)-21004 Spanish Language 2
+5 CT(IF)-21002 Fundamentals of Machine Learning 2
+6 CT(MI)-21001 Data Structures, Files and Algorithms 3
+7 EE(MI)-21004 Solar Energy Systems 3
+8 ETC(MI)-21001 Microcontrollers 3
+9 HS-21001 Entrepreneurship Principles and Process 1
+10 IE-20002 Analog Electronics 3
+11 IE-20003 Electrical and Electronics Measurement 3
+12 IE-21001 Microprocessors and Microcontrollers 3
+13 IE-21002 Process Loop Components 3
+14 IE-21003 Control System Design 3
+15 IE-21004 Digital Signal Processing 3
+16 IE-21005 Microprocessors and Microcontrollers Lab 1
+17 IE-21006 Process Loop Components Lab 1
+18 IE-21007 Control System Design Lab 1
+19 IE-21008 Digital Signal Processing Lab 1
+20 MA(MI)-22001 Numerical Methods in Finance 3
+21 MA-19002 Linear Algebra 3
+22 MA-20001 Ordinary Differential Equations and Multivariate
+Calculus 3
+23 MA-20002 Linear Algebra and Univariate Calculus 5
+24 MA-21001 Probability and Statistics for Engineers 3
+25 ML-21001 Constitution of India 0
+26 PH-20001 Foundation of Physics 3`]
+const temps = [...secondYearSubjects, ...thirdYearSubjects].map(x => x.split("\n").map((x) => x.split(" ").slice(1)))

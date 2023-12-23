@@ -8,7 +8,6 @@ let inputBox = document.querySelector('.input-box'),
 const findResult = (text) => {
 
     try {
-        console.log(text);
         const { details, score, subjectWise } = getByMIS(text)
         result.innerHTML= "";
         const header = createElement('h4', {});
@@ -19,7 +18,6 @@ const findResult = (text) => {
 
         // result.innerHTML = `<pre>` + JSON.stringify({ details, score, subjectWise }, null, 2) + `</pre>`;
     } catch (e) {
-        
         result.innerHTML = `<pre>${e}\nNo Result Found</pre>`;
     }
 
@@ -31,6 +29,7 @@ search.onblur = function (e) {
 
 search.oninput = function (e) {
     const text = e.target.value.trim();
+
     if (text.length == 9) {
         findResult(text)
     }

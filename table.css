@@ -49,6 +49,9 @@ table {
   
   td:nth-child(1) {
     text-align: left;
+      max-width: 40vw;
+      white-space: pre-wrap;
+  
   }
   
   th:nth-child(1) {
