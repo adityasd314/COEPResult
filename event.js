@@ -10,9 +10,17 @@ const findResult = (text) => {
     try {
         console.log(text);
         const { details, score, subjectWise } = getByMIS(text)
-        result.innerHTML = `<pre>` + JSON.stringify({ details, score, subjectWise }, null, 2) + `</pre>`;
+        result.innerHTML= "";
+        const header = createElement('h4', {});
+        header.innerHTML =details
+        result.append(header);
+        result.append(arrayToTable(Object.entries(score), { tableProps:{border:""}, tdProps:{}, trProps:{} }));
+        result.append(arrayToTable(Object.entries(subjectWise), { tableProps:{border:""}, tdProps:{}, trProps:{} }));
+
+        // result.innerHTML = `<pre>` + JSON.stringify({ details, score, subjectWise }, null, 2) + `</pre>`;
     } catch (e) {
-        result.innerHTML = `<pre>No Result Found</pre>`;
+        
+        result.innerHTML = `<pre>${e}\nNo Result Found</pre>`;
     }
 
 }
