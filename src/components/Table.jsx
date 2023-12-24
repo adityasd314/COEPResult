@@ -40,10 +40,10 @@ export function TableView({ data }) {
                 </TableHeader>
                 <TableBody>
                     {Object.entries(data.result.subjectWise).map(
-                        ([subject, grade]) => {
+                        ([subject, grade], i) => {
                             const [cred, gradeErnd] = grade.split(":");
                             return (
-                                <TableRow>
+                                <TableRow key={i}>
                                     <TableCell className="font-medium">
                                         {subject}
                                     </TableCell>
