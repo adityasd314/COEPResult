@@ -6,6 +6,7 @@ temps.map((temp) => {
         subjectMapping[key] = value;
     })
 })
+console.log({subjectMapping})
 const getSGCG = (inputString) => {
 
     const decimalPattern = /\b\d+\.\d+\b/g;

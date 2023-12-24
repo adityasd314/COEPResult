@@ -1,4 +1,128 @@
-
+const firstYearSubjects = [`1 CE-23004 Engineering Mechanics 4
+2 EE-23001 Basics of Electrical and Electronics Engineering 3
+3 HS-23001 Communication Skills 2
+4 LL-23001 Liberal Learning Course - Dance 1
+5 LL-23002 Liberal Learning Course - Film Appreciation 1
+6 LL-23003 Liberal Learning Course - Music Instrumental 1
+7 LL-23004 Liberal Learning Course - Music Vocal 1
+8 LL-23005 Liberal Learning Course - Painting 1
+9 LL-23006 Liberal Learning Course - Photography 1
+10 LL-23007 Liberal Learning Course - Theatre and Dramatics 1
+11 MA-23004 Matrix Algebra, Univariate Calculus and Probability 3
+12 ME-23001 Engineering Drawing and Graphics 3
+13 MFG-23010 Manufacturing Practices and Fab Lab - I 1
+14 PH-23001 Engineering Physics 3`,
+`1 PL-23001 Fundamentals of Planning 3
+2 PL-23002 Basics of Building Design of Construction 3
+3 PL-23003 Planning and Design Studio- I 4
+4 PL-23004 Techniques of Planning 3
+5 PL-23005 Demography and Urbanisation 3
+6 PL-23006 Introduction to GIS and Computer Fundamentals 3
+7 PL-23007 Communication Skill 1`,`1 CE-23004 Engineering Mechanics 4
+2 EE-23001 Basics of Electrical and Electronics Engineering 3
+3 HS-23001 Communication Skills 2
+4 LL-23001 Liberal Learning Course - Dance 1
+5 LL-23002 Liberal Learning Course - Film Appreciation 1
+6 LL-23003 Liberal Learning Course - Music Instrumental 1
+7 LL-23004 Liberal Learning Course - Music Vocal 1
+8 LL-23005 Liberal Learning Course - Painting 1
+9 LL-23007 Liberal Learning Course - Theatre and Dramatics 1
+10 MA-23004 Matrix Algebra, Univariate Calculus and Probability 3
+11 ME-23001 Engineering Drawing and Graphics 3
+12 MFG-23010 Manufacturing Practices and Fab Lab - I 1
+13 PH-23001 Engineering Physics 3`,`1 AS-23003 Design Thinking and Idea Lab 1
+2 EE-23001 Basics of Electrical and Electronics Engineering 3
+3 HS-23001 Communication Skills 2
+4 LL-23001 Liberal Learning Course - Dance 1
+5 LL-23002 Liberal Learning Course - Film Appreciation 1
+6 LL-23003 Liberal Learning Course - Music Instrumental 1
+7 LL-23004 Liberal Learning Course - Music Vocal 1
+8 LL-23005 Liberal Learning Course - Painting 1
+9 LL-23006 Liberal Learning Course - Photography 1
+10 LL-23007 Liberal Learning Course - Theatre and Dramatics 1
+11 MA-23004 Matrix Algebra, Univariate Calculus and Probability 3
+12 ME-23001 Engineering Drawing and Graphics 3
+13 ME-23002 Systems in Mechanical Engineering 3
+14 MFG-23010 Manufacturing Practices and Fab Lab - I 1
+15 PH-23001 Engineering Physics 3`,`1 CE-23004 Engineering Mechanics 4
+2 EE-23001 Basics of Electrical and Electronics Engineering 3
+3 HS-23001 Communication Skills 2
+4 LL-23001 Liberal Learning Course - Dance 1
+5 LL-23002 Liberal Learning Course - Film Appreciation 1
+6 LL-23003 Liberal Learning Course - Music Instrumental 1
+7 LL-23004 Liberal Learning Course - Music Vocal 1
+8 LL-23005 Liberal Learning Course - Painting 1
+9 LL-23006 Liberal Learning Course - Photography 1
+10 LL-23007 Liberal Learning Course - Theatre and Dramatics 1
+11 MA-23004 Matrix Algebra, Univariate Calculus and Probability 3
+12 ME-23001 Engineering Drawing and Graphics 3
+13 MFG-23010 Manufacturing Practices and Fab Lab - I 1
+14 PH-23001 Engineering Physics 3`,
+`1 AS-23001 Biology for Engineers 2
+2 AS-23002 Engineering Chemistry 3
+3 CE-23003 Engineering Mechanics 3
+4 CT-23003 Programming for Problem Solving 3
+5 ETC-23001 Elements of Electronics Engineering 3
+6 HS-23002 Indian Knowledge System 2
+7 LL-23008 Liberal Learning Course - Agriculture 1
+8 LL-23010 Liberal Learning Course - Geography 1
+9 LL-23011 Liberal Learning Course - History 1
+10 LL-23012 Liberal Learning Course - Holistic Health 1
+11 LL-23013 Liberal Learning Course - Interior Design 1
+12 LL-23014 Liberal Learning Course - Political Science 1
+13 MA-23003 Matrix Algebra, Calculus and Probability 3
+`,
+`1 AS-23001 Biology for Engineers 2
+2 AS-23002 Engineering Chemistry 3
+3 CE-23003 Engineering Mechanics 3
+4 CT-23003 Programming for Problem Solving 3
+5 ETC-23001 Elements of Electronics Engineering 3
+6 HS-23002 Indian Knowledge System 2
+7 LL-23008 Liberal Learning Course - Agriculture 1
+8 LL-23009 Liberal Learning Course - Corporate Culture 1
+9 LL-23010 Liberal Learning Course - Geography 1
+10 LL-23011 Liberal Learning Course - History 1`,
+`1 AS-23001 Biology for Engineers 2
+2 AS-23002 Engineering Chemistry 3
+3 CE-23003 Engineering Mechanics 3
+4 CT-23003 Programming for Problem Solving 3
+5 ETC-23001 Elements of Electronics Engineering 3
+6 HS-23002 Indian Knowledge System 2
+7 LL-23008 Liberal Learning Course - Agriculture 1
+8 LL-23009 Liberal Learning Course - Corporate Culture 1
+9 LL-23010 Liberal Learning Course - Geography 1
+10 LL-23011 Liberal Learning Course - History 1
+11 LL-23012 Liberal Learning Course - Holistic Health 1
+12 LL-23013 Liberal Learning Course - Interior Design 1
+13 LL-23014 Liberal Learning Course - Political Science 1
+14 MA-23003 Matrix Algebra, Calculus and Probability 3
+`,`1 AS-23001 Biology for Engineers 2
+2 CT-23001 Problem Solving using Procedural Programming 4
+3 CT-23002 Computer Lab 2
+4 EE-23001 Basics of Electrical and Electronics Engineering 3
+5 HS-23002 Indian Knowledge System 2
+6 LL-23008 Liberal Learning Course - Agriculture 1
+7 LL-23009 Liberal Learning Course - Corporate Culture 1
+8 LL-23010 Liberal Learning Course - Geography 1
+9 LL-23011 Liberal Learning Course - History 1
+10 LL-23012 Liberal Learning Course - Holistic Health 1
+11 LL-23013 Liberal Learning Course - Interior Design 1
+12 LL-23014 Liberal Learning Course - Political Science 1
+13 MA-23002 Linear Algebra 3
+14 PH-23001 Engineering Physics 3`,`1 AS-23001 Biology for Engineers 2
+2 CE-23001 Essentials of Civil Engineering 3
+3 CE-23002 Sensors & Actuators in Civil Engineering 3
+4 HS-23003 Communication and Presentation Skills 1
+5 LL-23008 Liberal Learning Course - Agriculture 1
+6 LL-23010 Liberal Learning Course - Geography 1
+7 LL-23011 Liberal Learning Course - History 1
+8 LL-23012 Liberal Learning Course - Holistic Health 1
+9 LL-23013 Liberal Learning Course - Interior Design 1
+10 LL-23014 Liberal Learning Course - Political Science 1
+11 MA-23001 Matrix Algebra & Calculus 3
+12 ME-23001 Engineering Drawing and Graphics 3
+13 MFG-23010 Manufacturing Practices and Fab Lab - I 1
+14 PH-23001 Engineering Physics 3`]
 const secondYearSubjects = [`1 AS-19001 Applied Chemistry 3
 2 CT-20002 Development Tools Laboratory 2
 3 CT-20003 Data Structures and Algorithms ±I 2
@@ -469,4 +593,4 @@ Calculus 3
 24 MA-21001 Probability and Statistics for Engineers 3
 25 ML-21001 Constitution of India 0
 26 PH-20001 Foundation of Physics 3`]
-const temps = [...secondYearSubjects, ...thirdYearSubjects].map(x => x.split("\n").map((x) => x.split(" ").slice(1)))
+const temps = [...firstYearSubjects,...secondYearSubjects, ...thirdYearSubjects].map(x => x.split("\n").map((x) => x.split(" ").slice(1)))
