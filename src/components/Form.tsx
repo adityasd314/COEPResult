@@ -24,7 +24,7 @@ import {
     SelectValue,
 } from "@/components/ui/select";
 import axios from "axios";
-
+import { Spinner } from "@/components/Spinner";
 const yearOfStudy = ["FY", "SY", "TY", "BY"];
 const semester = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 const formSchema = z.object({
@@ -38,6 +38,7 @@ export function UserForm({ data, setData }) {
     const [year, setYear] = useState("");
     const [sem, setSem] = useState("");
     const [MIS, setMIS] = useState("");
+    const [loading, setLoading] = useState(false);
     const handleMISChange = (e) => {
         console.log(e);
         setMIS(e.target.value);
@@ -53,16 +54,19 @@ export function UserForm({ data, setData }) {
     });
     function onSubmit(values: z.infer<typeof formSchema>) {
         console.log({ semester: sem, mis: MIS, yearOfStudy: year });
+        setLoading(true);
         axios
             .post("/api/data", { semester: sem, mis: MIS, yearOfStudy: year })
             .then((res) => {
                 console.log(res);
                 setData(res.data);
+                setLoading(false);
             })
             .catch((err) => {
                 console.log(err);
                 setData({ status: "error", result: {} });
                 toast.error("Something went wrong");
+                setLoading(false);
             });
         console.log(Object(values));
     }
@@ -132,7 +136,9 @@ export function UserForm({ data, setData }) {
                         </FormItem>
                     )}
                 />
-                <Button type="submit">Submit</Button>
+                <Button type="submit">
+                    {loading ? <Spinner /> : "Submit"}
+                </Button>
             </form>
         </Form>
     );

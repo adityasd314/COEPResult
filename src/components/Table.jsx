@@ -19,19 +19,24 @@ export function TableView({ data }) {
                         <TableHead className="w-[100px]">
                             Subject Name
                         </TableHead>
+                        <TableHead>Credit</TableHead>
                         <TableHead className="text-right">Grade</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
                     {Object.entries(data.result.subjectWise).map(
                         ([subject, grade]) => {
+                            const [cred, gradeErnd] = grade.split(":");
                             return (
                                 <TableRow>
                                     <TableCell className="font-medium">
                                         {subject}
                                     </TableCell>
                                     <TableCell className="text-right">
-                                        {grade}
+                                        {cred}
+                                    </TableCell>
+                                    <TableCell className="text-right">
+                                        {gradeErnd}
                                     </TableCell>
                                 </TableRow>
                             );
