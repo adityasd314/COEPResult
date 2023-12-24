@@ -1006,4 +1006,6 @@ const btechYearSubjects = [
     37 MA-21001 Probability and Statistics for Engineers 3
     38 ML-22001 Intellectual Property Rights 0`,
 ]
-const temps = [...firstYearSubjects,...secondYearSubjects, ...thirdYearSubjects, ...btechYearSubjects].map(x => x.split("\n").map((x) => x.split(" ").slice(1)))
+// const btechSubjects = btechYearSubjects.map((subject)=>subject.map(x => x.split("\n").map((x) => x.split(" ").slice(1))))
+
+const temps = [...firstYearSubjects,...secondYearSubjects,...thirdYearSubjects,...btechYearSubjects].map(x => x.split("\n").map((x) => x.split(" ").filter((y)=>y.trim()!='').slice(1)))

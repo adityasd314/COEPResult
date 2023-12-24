@@ -5221,8 +5221,6 @@ const db = [...btechYearDB,...firstYearDB, ...secondYearDB, ...thirdYearDB].map(
             while(k >= 0 && isNaN(arr[k].split(" ")[0])){
                 k--;
             }
-            console.log(temp[k])
-            console.log(k)
            temp[k] += ` ${temp[i]}`
            
        }
