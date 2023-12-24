@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
     Form,
@@ -26,18 +26,26 @@ import axios from "axios";
 const yearOfStudy = ["FY", "SY", "TY", "BY"];
 const semester = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 const formSchema = z.object({
-    mis: z
-        .number()
-        .max(999999999, { message: "MIS must be 9 digits" })
-        .min(111111111, {
-            message: "MIS must be 9 digits",
-        }),
     yearOfStudy: z.enum(yearOfStudy),
     semester: z.enum(semester),
 });
 
 export function UserForm() {
     // ...
+    const [year, setYear] = useState("")
+    const [sem, setSem] = useState("")
+    const [MIS, setMIS] = useState("")
+    const handleMISChange = (e)=>{
+        console.log(e)
+        setMIS(Number(e.target.value));
+    }
+    const handleSemesterChange = (value)=>{
+        setSem(value);
+    }
+    const handleYearChange = (value)=>{
+        
+        setYear(value);
+    }
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -47,12 +55,13 @@ export function UserForm() {
         },
     });
     function onSubmit(values: z.infer<typeof formSchema>) {
+        console.log({semester:sem, mis:MIS, yearOfStudy:year})
         axios
-            .post("/api/data", values)
+            .post("/api/data", {semester:sem, mis:MIS, yearOfStudy:year})
           .then((res) => {
             console.log(res);
             });
-        console.log(values);
+        console.log(Object(values));
     }
     return (
         <Form {...form}>
@@ -64,7 +73,7 @@ export function UserForm() {
                         <FormItem>
                             <FormLabel>Year Of Study</FormLabel>
                             <FormControl>
-                                <Select defaultValue="FY">
+                                <Select onValueChange={handleYearChange} defaultValue="FY">
                                     <SelectTrigger className="w-[180px]">
                                         <SelectValue placeholder="FY" />
                                     </SelectTrigger>
@@ -88,7 +97,7 @@ export function UserForm() {
                         <FormItem>
                             <FormLabel>Semester</FormLabel>
                             <FormControl>
-                                <Select defaultValue="I">
+                                <Select defaultValue="I" onValueChange={handleSemesterChange}>
                                     <SelectTrigger className="w-[180px]">
                                         <SelectValue placeholder="I" />
                                     </SelectTrigger>
@@ -112,7 +121,7 @@ export function UserForm() {
                         <FormItem>
                             <FormLabel>MIS</FormLabel>
                             <FormControl>
-                                <Input placeholder="MIS" {...field} />
+                                <Input type="number" onInput={handleMISChange} placeholder="MIS" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>

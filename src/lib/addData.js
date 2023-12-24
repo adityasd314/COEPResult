@@ -1,5 +1,5 @@
 const { MongoClient , ObjectId} = require("mongodb");
-const {thirdYearDB,  getJSONByDepartmentStrings} = require("./getJSONDataToAdd")
+const {secondYearDB, thirdYearDB,  getJSONByDepartmentStrings} = require("./getJSONDataToAdd")
 require("dotenv").config({path:"../../.env"});
 // Replace the uri string with your connection string.
 const uri = process.env.MONGODB_URI;
@@ -9,20 +9,19 @@ const client = new MongoClient(uri);
 async function run() {
   try {
     const database = client.db('2023241');
-    const results = database.collection('thirdyears');
-    // const dataToInsert = {};
+    const results = database.collection('secondyears');
+    const dataToInsert = {};
 
-    const MIS = "111901070";
-    "06ab798e39c8374d9466cb27"
+    const MIS = "612203036";
     const hexString = MIS.toString(16).padStart(24, '0');
 
     console.log(hexString);
     const data = await results.findOne({_id:new ObjectId(hexString)});
     console.log({data})
-    // const data = thirdYearDB.map(getJSONByDepartmentStrings).flat();
+    // const data = secondYearDB.map(getJSONByDepartmentStrings).flat();
     // console.log({data})
     // const dataToInsert =data.map(([MIS, resultString])=>{
-        // const hexString = MIS.toString(16).padStart(24, '0');
+    //     const hexString = MIS.toString(16).padStart(24, '0');
     //     console.log({MIS, resultString})
     //     return ({"_id":new ObjectId(hexString), resultString})
     // });
