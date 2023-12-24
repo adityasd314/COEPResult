@@ -56,13 +56,12 @@ const getResultByString= (resultString) => {
     const score = getSGCG(resultString)
     console.log(score)
     const decimalPattern = /\b\d+\.\d+\b/;
-    const decimalMatches = res.match(decimalPattern);
+    const decimalMatches = resultString.match(decimalPattern);
     const creditLastIndex = decimalMatches.index;
     const creditString = resultString.slice(getNameLastIndex+1, creditLastIndex)
     const [creditsRegistered, creditsEarned,creditsEarnedTotal, creditPointsTotal] = creditString
     console.log(creditString)
     const subjectWise = Object.fromEntries(resultString.split(" ").filter(x => x.slice(0, x.length - 4) in subjectMapping).map((x) => [x.substring(0, x.length - 4), x.substring(x.length - 3, x.length - 1)]).map((x) => [subjectMapping[x[0]], pointer(x.slice(1).join("")) + " : " + (x.slice(1).join(""))]));
-    console.log("??")
     console.log(subjectWise)
     return ({ details, score, subjectWise,credit:{creditsRegistered, creditsEarned,creditsEarnedTotal, creditPointsTotal} })
 }catch(e){

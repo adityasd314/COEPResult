@@ -14,6 +14,8 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
+
 import {
     Select,
     SelectContent,
@@ -28,38 +30,39 @@ const semester = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 const formSchema = z.object({
     yearOfStudy: z.enum(yearOfStudy),
     semester: z.enum(semester),
+    mis: z.string().min(9).max(9),
 });
 
-export function UserForm() {
+export function UserForm({ data, setData }) {
     // ...
-    const [year, setYear] = useState("")
-    const [sem, setSem] = useState("")
-    const [MIS, setMIS] = useState("")
-    const handleMISChange = (e)=>{
-        console.log(e)
-        setMIS(Number(e.target.value));
-    }
-    const handleSemesterChange = (value)=>{
+    const [year, setYear] = useState("");
+    const [sem, setSem] = useState("");
+    const [MIS, setMIS] = useState("");
+    const handleMISChange = (e) => {
+        console.log(e);
+        setMIS(e.target.value);
+    };
+    const handleSemesterChange = (value) => {
         setSem(value);
-    }
-    const handleYearChange = (value)=>{
-        
+    };
+    const handleYearChange = (value) => {
         setYear(value);
-    }
+    };
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
-        defaultValues: {
-            mis: 612203036,
-            yearOfStudy: "FY",
-            semester: "I",
-        },
     });
     function onSubmit(values: z.infer<typeof formSchema>) {
-        console.log({semester:sem, mis:MIS, yearOfStudy:year})
+        console.log({ semester: sem, mis: MIS, yearOfStudy: year });
         axios
-            .post("/api/data", {semester:sem, mis:MIS, yearOfStudy:year})
-          .then((res) => {
-            console.log(res);
+            .post("/api/data", { semester: sem, mis: MIS, yearOfStudy: year })
+            .then((res) => {
+                console.log(res);
+                setData(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+                setData({ status: "error", result: {} });
+                toast.error("Something went wrong");
             });
         console.log(Object(values));
     }
@@ -69,13 +72,14 @@ export function UserForm() {
                 <FormField
                     control={form.control}
                     name="yearOfStudy"
+                    defaultValue="FY"
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Year Of Study</FormLabel>
                             <FormControl>
-                                <Select onValueChange={handleYearChange} defaultValue="FY">
+                                <Select onValueChange={handleYearChange}>
                                     <SelectTrigger className="w-[180px]">
-                                        <SelectValue placeholder="FY" />
+                                        <SelectValue />
                                     </SelectTrigger>
                                     <SelectContent>
                                         {yearOfStudy.map((item) => (
@@ -93,13 +97,14 @@ export function UserForm() {
                 <FormField
                     control={form.control}
                     name="semester"
+                    defaultValue="I"
                     render={({ field }) => (
                         <FormItem>
                             <FormLabel>Semester</FormLabel>
                             <FormControl>
-                                <Select defaultValue="I" onValueChange={handleSemesterChange}>
+                                <Select onValueChange={handleSemesterChange}>
                                     <SelectTrigger className="w-[180px]">
-                                        <SelectValue placeholder="I" />
+                                        <SelectValue />
                                     </SelectTrigger>
                                     <SelectContent>
                                         {semester.map((item) => (
@@ -121,7 +126,7 @@ export function UserForm() {
                         <FormItem>
                             <FormLabel>MIS</FormLabel>
                             <FormControl>
-                                <Input type="number" onInput={handleMISChange} placeholder="MIS" {...field} />
+                                <Input onInput={handleMISChange} {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
