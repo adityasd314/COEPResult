@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div>
             <main className="flex min-h-screen flex-col md:flex-row items-center justify-evenly">
-                <Card className="p-12 m-12" style={{ background: "#fff3" }}>
+                <Card id="form-card" className="p-12 m-12" style={{ background: "#fff3" }}>
                     <h1 className="text-4xl font-extrabold tracking-tight lg:text-4xl my-6 text-left">
                         COEP Result
                     </h1>

@@ -10,6 +10,16 @@ body {
   user-select: none;
 }
 
+@media print {
+  body {
+    background: none;
+  }
+
+  #form-card {
+    display: none;
+  }
+}
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
