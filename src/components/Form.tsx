@@ -37,8 +37,8 @@ const semester: [string, ...string[]] = [
     "VIII",
 ];
 const formSchema = z.object({
-    yearOfStudy: z.enum(yearOfStudy),
-    semester: z.enum(semester),
+    // yearOfStudy: z.enum(yearOfStudy),
+    // semester: z.enum(semester),
     mis: z.string().min(9).max(9),
 });
 
@@ -61,11 +61,23 @@ export function UserForm({ data, setData }: any) {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     });
-    function onSubmit(values: z.infer<typeof formSchema>) {
+    const predictByMIS = function(mis: String){
+        const possibleYearOfStudy = ["FY", "SY", "TY", "BY"];
+        const year = new Date().getFullYear() - (2000+Number (mis.slice(2,4)));
+        console.log({year})
+        console.log(possibleYearOfStudy[year])
+        const semester = year * 2 + 1 // will change this later
+
+        return {semester, yearOfStudy:possibleYearOfStudy[year]};
+    }
+    function onSubmit(values: z.infer<typeof formSchema>) { 
+        console.log("Asdf")
         console.log({ semester: sem, mis: MIS, yearOfStudy: year });
+        const data = {...predictByMIS(MIS), mis: MIS};
+        console.log(data)
         setLoading(true);
         axios
-            .post("/api/data", { semester: sem, mis: MIS, yearOfStudy: year })
+            .post("/api/data", data)
             .then((res) => {
                 console.log(res);
                 setData(res.data);
@@ -82,7 +94,7 @@ export function UserForm({ data, setData }: any) {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <FormField
+                {/* <FormField
                     control={form.control}
                     name="yearOfStudy"
                     defaultValue="FY"
@@ -131,7 +143,7 @@ export function UserForm({ data, setData }: any) {
                             <FormMessage />
                         </FormItem>
                     )}
-                />
+                /> */}
                 <FormField
                     control={form.control}
                     name="mis"

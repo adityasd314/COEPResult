@@ -16,7 +16,7 @@ export default function Home() {
                         COEP Result
                     </h1>
                     <UserForm data={data} setData={setData} />
-                    <footer className="flex items-center justify-center w-full border-t mt-4 p-4 text-gray-700">
+                    {/* <footer className="flex items-center justify-center w-full border-t mt-4 p-4 text-gray-700">
                         Powered to you by &nbsp;
                         <a
                             className="underline"
@@ -24,7 +24,7 @@ export default function Home() {
                         >
                             AdityaSD314
                         </a>
-                    </footer>
+                    </footer> */}
                 </Card>
                 {data.status === "ok" ? (
                     <Card
