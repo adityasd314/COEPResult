@@ -8,11 +8,26 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
+import { Button } from "@/components/ui/button";
 
 export function TableView({ data }) {
     return (
         <div>
-            <h1 className="text-center">{data.result.details}</h1>
+            <div className="flex flex-row items-center justify-between">
+                <h1 className="text-center">{data.result.details}</h1>
+                <Button
+                    className="m-2 hide-on-print"
+                    onClick={() => window.print()}
+                >
+                    Download
+                </Button>
+            </div>
+            <div className="flex gap-10">
+                <h2 className="m-10">SGPA: {data.result.score.SGPA}</h2>
+                <h2>&nbsp;&nbsp;</h2>
+                <h2 className="m-2">CGPA: {data.result.score.CGPA}</h2>
+            </div>
+
             <Table>
                 <TableHeader>
                     <TableRow>

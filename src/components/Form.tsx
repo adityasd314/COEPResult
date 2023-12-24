@@ -25,28 +25,37 @@ import {
 } from "@/components/ui/select";
 import axios from "axios";
 import { Spinner } from "@/components/Spinner";
-const yearOfStudy = ["FY", "SY", "TY", "BY"];
-const semester = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
+const yearOfStudy: [string, ...string[]] = ["FY", "SY", "TY", "BY"];
+const semester: [string, ...string[]] = [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+];
 const formSchema = z.object({
     yearOfStudy: z.enum(yearOfStudy),
     semester: z.enum(semester),
     mis: z.string().min(9).max(9),
 });
 
-export function UserForm({ data, setData }) {
+export function UserForm({ data, setData }: any) {
     // ...
     const [year, setYear] = useState("");
     const [sem, setSem] = useState("");
     const [MIS, setMIS] = useState("");
     const [loading, setLoading] = useState(false);
-    const handleMISChange = (e) => {
+    const handleMISChange = (e: any) => {
         console.log(e);
         setMIS(e.target.value);
     };
-    const handleSemesterChange = (value) => {
+    const handleSemesterChange = (value: string) => {
         setSem(value);
     };
-    const handleYearChange = (value) => {
+    const handleYearChange = (value: string) => {
         setYear(value);
     };
     const form = useForm<z.infer<typeof formSchema>>({
