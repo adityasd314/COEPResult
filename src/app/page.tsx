@@ -12,7 +12,7 @@ export default function Home() {
         <div>
             <main className="flex min-h-screen flex-col md:flex-row items-center justify-evenly">
                 <Card className="p-12 m-12 hide-on-print" style={{ background: "#fff3" }}>
-                    <h1 className="text-4xl font-extrabold tracking-tight lg:text-4xl my-6 text-left">
+                    <h1 className="text-4xl font-extrabold tracking-tight lg:text-4xl my-6 text-left heading-main">
                         COEP Result
                     </h1>
                     <UserForm data={data} setData={setData} />
