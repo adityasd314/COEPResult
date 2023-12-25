@@ -34,7 +34,7 @@ export function TableView({ data }) {
                         <TableHead className="w-[100px]">
                             Subject Name
                         </TableHead>
-                        <TableHead>Credit</TableHead>
+                        <TableHead>Pointer</TableHead>
                         <TableHead className="text-right">Grade</TableHead>
                     </TableRow>
                 </TableHeader>
