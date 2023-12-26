@@ -9,13 +9,7 @@ body {
   /* height: 100vh; */
   user-select: none;
 }
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
- .heading-main{
-  font-size: xx-large;
-}
-  
-}
+
 @media print {
   body {
     background: none;
@@ -37,5 +31,14 @@ body {
 
   100% {
     background-position: 0% 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .heading-main {
+    font-size: xx-large;
+  }
+  .justify-evenly {
+    justify-content: flex-start;
   }
 }
