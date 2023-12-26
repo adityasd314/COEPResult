@@ -1,4 +1,28 @@
+# College Results Portal
+
+Welcome to the College Results Portal repository! This web application provides a user-friendly interface for accessing recently declared, upcoming, and historical academic results.
+
+## Features
+
+- **Real-time Results:** Instant access to the latest semester results.
+- **Future Result Declarations:** Stay informed about upcoming results.
+- **Historical Database:** Explore results from past semesters.
+
+## Access the portal
+Open the portal in your web browser by navigating to https://coepresult.vercel.app.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Contributing
+If you'd like to contribute to the project, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/new-feature).
+3. Make your changes and commit them (git commit -m 'Add new feature').
+4. Push the changes to your branch (git push origin feature/new-feature).
+5. Open a pull request.
+
 
 ## Getting Started
 
