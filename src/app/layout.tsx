@@ -5,22 +5,29 @@ import { Toaster } from "@/components/ui/sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "COEP Result",
-    description: "This contains recent result database of COEP Tech university. Soon all the results will be available",
+  title: "COEP Result",
+  description:
+    "This contains recent result database of COEP Tech university. Soon all the results will be available",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <html lang="en">
-            <body className={inter.className}>
-                {children}
-                <Toaster />
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en">
+      <head>
+        <script
+          async
+          src="https://us.umami.is/script.js"
+          data-website-id="82432fb0-2efd-45dd-88e6-073462df6396"
+        ></script>
+      </head>
+      <body className={inter.className}>
+        {children}
+        <Toaster />
+      </body>
+    </html>
+  );
 }
-
