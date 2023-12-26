@@ -7,22 +7,75 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="table.css">
     <script async src="https://us.umami.is/script.js" data-website-id="e2fd9e93-8d07-44fe-8f73-dc0c161de690"></script>
+    <style>.result-link {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(to right, #3498db, #2980b9);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: transform 0.2s ease-in-out;
+      animation: gradientAnimation 3s linear infinite alternate;
+    }
+    
+    .result-link:hover {
+      transform: scale(1.1);
+      animation: none; /* Disable the animation on hover */
+    }
+    
+    @keyframes gradientAnimation {
+      0% {
+    background-position: 0% 50%;
+    filter: brightness(1);
+
+  }
+  100% {
+    background-position: 100% 50%;
+    filter: brightness(1.5);
+
+
+  }
+    }
+    
+    @media (max-width: 768px) {
+      .result-link {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
+    }
+    
+    a {
+    display: flex;
+    margin-top: 2rem;
+    width:80%;
+    margin-left: auto;
+    margin-right: auto;
+    /* text-decoration: underline; */
+
+}
+    </style>
   </head>
   <body>
     <!-- Created based on Youtube [CodingLab](https://www.youtube.com/@CodingLabYT)-->
 
-    <!-- Icon -->
+    <!-- Icon --> 
     <div class="container">
-
       <div class="input-box open">
         <input id="search" type="text" placeholder="Enter MIS..." />
        
       </div>
+      <a href="https://coepresult.vercel.app" class="result-link" target="_blank">  🌟 Explore the Enhanced College Results Portal! Click here to check your results. 🌟
+</a>
         
       <div id="result">
   
       </div>
     </div>
+    <script>
+      location.href = "https://coepresult.vercel.app"
+    </script>
     <script src="subjectData.js" defer></script>
     <script src="data.js" defer></script>
     <script src="table.js" defer></script>
