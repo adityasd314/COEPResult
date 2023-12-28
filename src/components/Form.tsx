@@ -67,7 +67,7 @@ export function UserForm({ data, setData }: any) {
         const isDSY = mis.indexOf("6423") != -1;
         console.log({year})
         console.log(possibleYearOfStudy[year])
-        const semester = isDSY?1:(year * 2 + 1) // will change this later
+        const semester = isDSY?3:(year * 2 + 1) // will change this later
 
         return {semester, yearOfStudy:(isDSY?possibleYearOfStudy[1]: possibleYearOfStudy[year])};
     }
