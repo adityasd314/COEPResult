@@ -1,5 +1,5 @@
 const determineDatabaseCollection = function ( yearOfStudy, semester ) {
-    const currentYear = new Date().getFullYear()-1;
+    const currentYear = new Date().getFullYear() - 1;
     const yearMap = {
         "FY":1,"SY":2,"TY":3,"BY":4
     }
@@ -23,7 +23,7 @@ const determineDatabaseCollection = function ( yearOfStudy, semester ) {
     console.log({databaseString})
     const collectionString = yearMapToString[yearOfStudy] + "years";
     
-
+    console.log({databaseString, collectionString})
   return {databaseString, collectionString}
 };
 
