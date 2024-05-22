@@ -9,7 +9,7 @@ const client = new MongoClient(uri);
 async function run() {
   try {
     const database = client.db('2023242');
-    const results = database.collection('secondyears');
+    const results = database.collection('btechyears');
     // const dataToInsert = {};
 
     // const MIS = "612203036";

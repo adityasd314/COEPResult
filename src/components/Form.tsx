@@ -68,8 +68,7 @@ export function UserForm({ data, setData }: any) {
         console.log({year})
         console.log(possibleYearOfStudy[year])
         isDSY && year++;
-        let semester = (year * 2 + 1) // will change this later
-        if(mis.includes("6122"))semester = (year * 2 + 2)
+        let semester = (year * 2 + 2) // will change this later
         console.log({semester, yearOfStudy:possibleYearOfStudy[year]})
         return {semester, yearOfStudy: possibleYearOfStudy[year]};
     }
