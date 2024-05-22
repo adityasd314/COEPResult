@@ -1,5 +1,5 @@
 const { MongoClient , ObjectId} = require("mongodb");
-const {btechYearDB, secondYearDB, firstYearDB,  getJSONByDepartmentStrings} = require("./getJSONDataToAdd")
+const {btechYearDB, secondYearDB,courseData, firstYearDB,tempDB,  getJSONByDepartmentStrings} = require("./getJSONDataToAdd")
 require("dotenv").config({path:"../../.env"});
 // Replace the uri string with your connection string.
 const uri = process.env.MONGODB_URI;
@@ -8,7 +8,7 @@ const client = new MongoClient(uri);
 
 async function run() {
   try {
-    const database = client.db('2023241');
+    const database = client.db('2023242');
     const results = database.collection('secondyears');
     // const dataToInsert = {};
 
@@ -18,17 +18,22 @@ async function run() {
     // console.log(hexString);
     // const data = await results.findOne({_id:new ObjectId(hexString)});
     // console.log({data})
-    const data = secondYearDB.map(getJSONByDepartmentStrings).flat();
-    console.log({data})
+    // const data = secondYearDB.map(getJSONByDepartmentStrings).flat();
+    const data = tempDB;
     const dataToInsert =data.map(([MIS, resultString])=>{
         const hexString = MIS.toString(16).padStart(24, '0');
         console.log({MIS, resultString})
         return ({"_id":new ObjectId(hexString), resultString})
-    }).filter((x)=>String(x?._id)?.indexOf("642313")!=-1)
-    console.log({dataToInsert})
-    console.log(dataToInsert.length)
+    })
+    
 
-    // const response  = await results.insertMany(dataToInsert);
+    const response  = await results.insertMany(dataToInsert);
+    // update ../app/api/data/courseData.json
+    const courseDT = require("../app/api/data/courseMap.json");
+    const newCourseData = {...courseData, ...courseDT};
+    const fs = require("fs");
+    fs.writeFileSync("../app/api/data/courseMap.json", JSON.stringify(newCourseData, null, 2));
+
 
     console.log({response});
   }catch(e){

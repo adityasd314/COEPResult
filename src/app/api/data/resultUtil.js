@@ -17,9 +17,9 @@ const determineDatabaseCollection = function ( yearOfStudy, semester ) {
     //   "VIII": 8
     // }
     const baseYear = currentYear - yearMap [yearOfStudy] + 1;
-    const databaseYear = (baseYear + Math.floor(semester/2)).toString()
+    const databaseYear = (baseYear + Math.floor((semester-1)/2)).toString()
     const nextYearPostFix = Number(databaseYear.slice(2)) + 1;
-    const databaseString = databaseYear + nextYearPostFix + semester%2;
+    const databaseString = databaseYear + nextYearPostFix + (2-semester%2);
     console.log({databaseString})
     const collectionString = yearMapToString[yearOfStudy] + "years";
     

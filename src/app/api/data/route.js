@@ -20,6 +20,9 @@ export async function POST(req) {
 
         console.log(hexString);
         const data = await results.findOne({ _id: new ObjectId(hexString) });
+        if (!data) {
+           return Response.json({ status: "error", message: "Data not found" });
+        }
         console.log(data);
         console.log(data.resultString);
         console.log({ getResultByString });

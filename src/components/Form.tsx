@@ -63,13 +63,15 @@ export function UserForm({ data, setData }: any) {
     });
     const predictByMIS = function(mis: String){
         const possibleYearOfStudy = ["FY", "SY", "TY", "BY"];
-        const year = 2023 - (2000+Number (mis.slice(2,4)));
-        const isDSY = mis.indexOf("6423") != -1;
+        let year = 2023 - (2000+Number (mis.slice(2,4)));
+        const isDSY = mis[1] == "4";
         console.log({year})
         console.log(possibleYearOfStudy[year])
-        const semester = isDSY?3:(year * 2 + 1) // will change this later
-        console.log({semester, yearOfStudy:(isDSY?possibleYearOfStudy[1]: possibleYearOfStudy[year])})
-        return {semester, yearOfStudy:(isDSY?possibleYearOfStudy[1]: possibleYearOfStudy[year])};
+        isDSY && year++;
+        let semester = (year * 2 + 1) // will change this later
+        if(mis.includes("6122"))semester = (year * 2 + 2)
+        console.log({semester, yearOfStudy:possibleYearOfStudy[year]})
+        return {semester, yearOfStudy: possibleYearOfStudy[year]};
     }
     function onSubmit(values: z.infer<typeof formSchema>) { 
         console.log("Asdf")
