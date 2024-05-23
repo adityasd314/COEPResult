@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { Spinner } from "@/components/Spinner";
 import "./Notices.css";
 const BASE_URL = "https://www.coep.org.in";
 
@@ -252,7 +253,7 @@ const Notices = () => {
       </div>
 
       {isLoading ? (<>
-        {/* <div className="loader text-center">Loading...</div> */}
+        <div className="loader text-center"> <Spinner /></div>
         
         </>  ) : (
         renderPage(currentPage)
