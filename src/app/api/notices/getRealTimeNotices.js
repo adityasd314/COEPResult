@@ -31,7 +31,7 @@ async function writeNotices(pagesNumber){
         }).flat()
         return data;
     }
-    const data = await getNotices() || {};
+    const data = (await getNotices()) || {};
     return data;
     }
 module.exports.writeNotices =  writeNotices;

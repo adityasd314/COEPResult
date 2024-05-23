@@ -9,7 +9,7 @@ const Navbar = () => {
         <nav className="flex items-center justify-between flex-wrap bg-white/40 p-4 w-screen lg:w-4/5 m-auto lg:left-0 lg:right-0 lg:mt-2 lg:rounded-3xl">
             <div className="flex items-center flex-shrink-0 text-black mr-6">
                 <span className="font-semibold text-xl tracking-tight bg-white/50 px-2 py-1 rounded-xl lg:ml-4">
-                    <Link href={"/"}>COEP Result</Link>
+                    <Link href={"/"} onClick={()=>setNavbarOpen(false)}>COEP Result</Link>
                 </span>
             </div>
             <div className="block lg:hidden">
@@ -35,24 +35,24 @@ const Navbar = () => {
             >
                 <div className="text-sm lg:flex-grow">
                     <Link
-                        href="/notices"
+                        href="/notices" onClick={()=>setNavbarOpen(false)}
                         className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
                         Notices 📝
                     </Link>
-                    <Link
+                    <Link onClick={()=>setNavbarOpen(false)}
                         href="https://github.com/adityasd314/coepresult"
                         className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
                         Source Code 💻
                     </Link>
-                    <Link
+                    <Link onClick={()=>setNavbarOpen(false)}
                         href="https://t.me/adityasd314"
                         className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
                         Contact 📱
                     </Link>
-                    <Link
+                    <Link onClick={()=>setNavbarOpen(false)}
                         href="https://github.com/adityasd314/coepresult#readme"
                         className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
