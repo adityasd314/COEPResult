@@ -198,11 +198,13 @@ const Notices = () => {
           {dataToShow.length ? (
             renderTable(dataToShow)
           ) : (
+            <tbody>
             <tr  className="animate">
               <td colSpan="3" className="text-center py-4">
                 No data found
               </td>
             </tr>
+            </tbody>
           )}
         </table>
         <div className="flex justify-center items-center my-4 gap-x-3">
