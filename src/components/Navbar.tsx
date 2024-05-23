@@ -46,7 +46,7 @@ const Navbar = () => {
                     >
                         Source Code 💻
                     </Link>
-                    <Link onClick={()=>setNavbarOpen(false)}
+                    <Link  
                         href="https://t.me/adityasd314"
                         className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
