@@ -1,0 +1,210 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  animation: fadeIn 0.5s ease;
+  min-height: 100vh;
+}
+
+.h1 {
+  text-align: center;
+  color: #333;
+  /* Change text color to black */
+  margin-top: 40px;
+  margin-bottom: 30px;
+  transition: color 0.3s ease;
+  animation: slideInDown 0.5s ease;
+  font-size: 2.5rem;
+  /* Increase font size */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add subtle text shadow */
+}
+
+.h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  /* Add a decorative line under the heading */
+  height: 3px;
+  background-color: #333;
+  margin: 10px auto;
+  /* Center the line horizontally */
+}
+
+
+.h1 a:hover {
+  color: #ff6347;
+  text-decoration: none;
+}
+
+.tbl {
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  animation: slideInLeft 0.5s ease;
+
+}
+
+.tbl th {
+  text-align: left;
+  padding: 12px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.tbl td {
+  text-align: left;
+  padding: 12px;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+.tbl th {
+  background-color: #55608f;
+}
+
+.tbl tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tbl tbody {
+  background-color: white;
+}
+
+/* Link Styles */
+a {
+  /* color: #fff; */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #333;
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  animation: slideInUp 0.5s ease;
+}
+
+.pagination button {
+  background-color: #55608f;
+  color: white;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination button.active {
+  background-color: yellow;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate {
+  animation: fadeInRow 0.5s ease forwards;
+}
+
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #455082;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3a4575;
+}
+
+.search {
+  margin-bottom: 1vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+
+
+}

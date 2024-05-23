@@ -6,9 +6,9 @@ const Navbar = () => {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
 
     return (
-        <nav className="flex items-center justify-between flex-wrap bg-white/40 p-4 lg:absolute w-screen lg:w-4/5 m-auto lg:left-0 lg:right-0 lg:mt-2 lg:rounded-3xl">
+        <nav className="flex items-center justify-between flex-wrap bg-white/40 p-4 w-screen lg:w-4/5 m-auto lg:left-0 lg:right-0 lg:mt-2 lg:rounded-3xl">
             <div className="flex items-center flex-shrink-0 text-black mr-6">
-                <span className="font-semibold text-xl tracking-tight">
+                <span className="font-semibold text-xl tracking-tight bg-white/50 px-2 py-1 rounded-xl lg:ml-4">
                     <Link href={"/"}>COEP Result</Link>
                 </span>
             </div>
@@ -35,22 +35,28 @@ const Navbar = () => {
             >
                 <div className="text-sm lg:flex-grow">
                     <Link
-                        href="https://github.com/adityasd314/coepresult"
-                        className="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
+                        href="/notices"
+                        className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
-                        Source Code
+                        Notices 📝
+                    </Link>
+                    <Link
+                        href="https://github.com/adityasd314/coepresult"
+                        className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
+                    >
+                        Source Code 💻
                     </Link>
                     <Link
                         href="https://t.me/adityasd314"
-                        className="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
+                        className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
-                        Contact
+                        Contact 📱
                     </Link>
                     <Link
                         href="https://github.com/adityasd314/coepresult#readme"
-                        className="block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700"
+                        className="bg-white/75 rounded-lg px-2 py-1 block mt-4 lg:inline-block lg:mt-0 text-black-200 hover:text-slate-700 mr-4"
                     >
-                        About
+                        About ❓
                     </Link>
                 </div>
             </div>
