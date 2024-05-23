@@ -16,15 +16,22 @@ export default function Home() {
                         COEP Result
                     </h1>
                     <UserForm data={data} setData={setData} />
-                    {/* <footer className="flex items-center justify-center w-full border-t mt-4 p-4 text-gray-700">
+                    <footer className="flex flex-col items-center justify-center w-full border-t mt-4 p-4 text-gray-700">
                         Powered to you by &nbsp;
+                        <p>
                         <a
                             className="underline"
-                            href="https://github.com/AdityaSD314"
+                            href="https://github.com/satvikg7"
+                        >
+                            SatvikG7
+                        </a>&nbsp; & &nbsp; <a
+                            className="underline"
+                            href="https://github.com/adityasd314"
                         >
                             AdityaSD314
                         </a>
-                    </footer> */}
+                        </p>
+                    </footer>
                 </Card>
                 {data.status === "ok" ? (
                     <Card

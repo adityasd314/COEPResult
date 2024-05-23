@@ -9,7 +9,7 @@ const client = new MongoClient(uri);
 async function run() {
   try {
     const database = client.db('2023242');
-    const results = database.collection('thirdyears');
+    const results = database.collection('btechyears');
     // const dataToInsert = {};
 
     // const MIS = "612203036";
@@ -26,8 +26,42 @@ async function run() {
         return ({"_id":new ObjectId(hexString), resultString})
     })
     
+    // const regex = new RegExp('.{15}10.{3}$');
 
+    //     // Aggregate documents to match specific pattern in ObjectId
+    //     const matchStage = {
+    //         $match: {
+    //             _id: {
+    //                 $regex: regex.toString(),
+    //                 $options: 'i' // Case insensitive, though not necessary for hex digits
+    //             }
+    //         }
+    //     };
+
+    //     const pipeline = [
+    //         {
+    //             $project: {
+    //                 _idStr: { $toString: "$_id" }
+    //             }
+    //         },
+    //         {
+    //             $match: {
+    //                 _idStr: { $regex: regex }
+    //             }
+    //         }
+    //     ];
+
+    //     // Execute the aggregation pipeline to find matching documents
+    //     const docsToDelete = await results.aggregate(pipeline).toArray();
+    //     const idsToDelete = docsToDelete.map(doc => doc._id);
+
+    //     // Delete documents by their _id
+    //     const response = await results.deleteMany({ _id: { $in: idsToDelete } });
+
+    // Delete documents where the ObjectId matches the regex pattern
+    // const response = await results.deleteMany({ _id: { $regex: regex } });
     const response  = await results.insertMany(dataToInsert);
+    // const response  = await results.insertMany(dataToInsert);
     // update ../app/api/data/courseData.json
     const courseDT = require("../app/api/data/courseMap.json");
     const newCourseData = {...courseData, ...courseDT};
