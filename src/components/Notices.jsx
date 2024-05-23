@@ -177,12 +177,9 @@ const Notices = () => {
     const data =
       t(searchInput) && t(dateInput)
         ? originalData
-        : currentSearchResults.length > 0
-        ? currentSearchResults
-        : currentFilteredResults.length > 0
-        ? currentFilteredResults
+        : [...currentSearchResults, ...currentFilteredResults].length > 0
+        ? [...new Set([...currentSearchResults, ...currentFilteredResults].map((x)=>JSON.stringify(x)))].map((x)=>JSON.parse(x))
         : [];
-console.log({currentSearchResults, currentFilteredResults, data})
     const noticesPerPage = 10;
     const startIndex = (pageNumber - 1) * noticesPerPage;
     const endIndex = startIndex + noticesPerPage;
@@ -254,9 +251,10 @@ console.log({currentSearchResults, currentFilteredResults, data})
         </div>
       </div>
 
-      {isLoading ? (
-        <div className="loader text-center">Loading...</div>
-      ) : (
+      {isLoading ? (<>
+        {/* <div className="loader text-center">Loading...</div> */}
+        
+        </>  ) : (
         renderPage(currentPage)
       )}
     </div>
