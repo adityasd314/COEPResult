@@ -61,22 +61,22 @@ export function UserForm({ data, setData }: any) {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
     });
-    const predictByMIS = function(mis: String){
+    const predictByMIS = function (mis: String) {
         const possibleYearOfStudy = ["FY", "SY", "TY", "BY"];
-        let year = 2023 - (2000+Number (mis.slice(2,4)));
+        let year = 2023 - (2000 + Number(mis.slice(2, 4)));
         const isDSY = mis[1] == "4";
-        console.log({year})
-        console.log(possibleYearOfStudy[year])
+        console.log({ year });
+        console.log(possibleYearOfStudy[year]);
         isDSY && year++;
-        let semester = (year * 2 + 2) // will change this later
-        console.log({semester, yearOfStudy:possibleYearOfStudy[year]})
-        return {semester, yearOfStudy: possibleYearOfStudy[year]};
-    }
-    function onSubmit(values: z.infer<typeof formSchema>) { 
-        console.log("Asdf")
+        let semester = year * 2 + 2; // will change this later
+        console.log({ semester, yearOfStudy: possibleYearOfStudy[year] });
+        return { semester, yearOfStudy: possibleYearOfStudy[year] };
+    };
+    function onSubmit(values: z.infer<typeof formSchema>) {
+        console.log("Asdf");
         console.log({ semester: sem, mis: MIS, yearOfStudy: year });
-        const data = {...predictByMIS(MIS), mis: MIS};
-        console.log(data)
+        const data = { ...predictByMIS(MIS), mis: MIS };
+        console.log(data);
         setLoading(true);
         axios
             .post("/api/data", data)
