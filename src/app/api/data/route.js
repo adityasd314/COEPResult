@@ -21,7 +21,20 @@ export async function POST(req) {
         console.log(hexString);
         const data = await results.findOne({ _id: new ObjectId(hexString) });
         if (!data) {
-           return Response.json({ status: "error", message: "Data not found" });
+            const databases = ["2023241", "2023242"];
+            const collections = ["firstyears", "secondyears", "thirdyears", "btechyears"];
+            const result = await Promise.all(databases.map((db) => {
+                return collections.map(async (collection) => {
+                    const database = client.db(db);
+                    const results = database.collection(collection);
+                    const data = await results.findOne({ _id: new ObjectId(hexString) });
+                    return data;
+                });
+            }).flat());
+            const r = (result.find((x)=>x));
+            if(!r)return Response.json({ status: "error", message: "Data not found" });
+
+           return Response.json({ status: "ok", result: getResultByString(r.resultString) });
         }
         console.log(data);
         console.log(data.resultString);
