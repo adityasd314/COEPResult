@@ -21,7 +21,7 @@ export async function POST(req) {
         console.log(hexString);
         const data = await results.findOne({ _id: new ObjectId(hexString) });
         if (!data) {
-            const databases = ["2023241", "2023242"];
+            const databases = ["2023242", "2023241"];
             const collections = ["firstyears", "secondyears", "thirdyears", "btechyears"];
             const result = await Promise.all(databases.map((db) => {
                 return collections.map(async (collection) => {
