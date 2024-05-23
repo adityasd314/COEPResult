@@ -189,7 +189,7 @@ const Notices = () => {
       <>
         <table className="tbl lg:w-4/5 m-auto">
           <thead>
-            <tr>
+            <tr  className="animate">
               <th>Date</th>
               <th>Title</th>
               <th>Link</th>
@@ -198,7 +198,7 @@ const Notices = () => {
           {dataToShow.length ? (
             renderTable(dataToShow)
           ) : (
-            <tr>
+            <tr  className="animate">
               <td colSpan="3" className="text-center py-4">
                 No data found
               </td>
@@ -252,12 +252,27 @@ const Notices = () => {
         </div>
       </div>
 
-      {isLoading ? (<>
+      {isLoading ?(<>
         <div className="loader text-center"> <Spinner /></div>
-        
-        </>  ) : (
-        renderPage(currentPage)
-      )}
+        <table className="tbl lg:w-4/5 m-auto">
+          <thead>
+            <tr  className="animate">
+              <th>Date</th>
+              <th>Title</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  className="animate">
+              <td colSpan="3" className="text-center py-4">
+                Fetching Latest Notices
+              </td>
+            </tr>
+            </tbody>
+        </table>
+        </>  ) : renderPage(currentPage)
+        }
+       
     </div>
   );
 };
