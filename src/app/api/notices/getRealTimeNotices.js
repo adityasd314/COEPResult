@@ -30,7 +30,8 @@ async function writeNotices(pagesNumber) {
             }).flat()
             return data;
         } catch (e){
-            console.log(e);
+            console.log({e});
+            return ({});
         }
     }
     const data = (await getNotices()) || {};
