@@ -10,7 +10,7 @@ function extractTableFromHTML(htmlString) {
     // Extract the table element
     const table = document.querySelector("table"); // Assumes there's one table in the response
     if (table) {
-        console.log("Table extracted:", table.outerHTML);
+        // console.log("Table extracted:", table.outerHTML);
         return table.outerHTML;
     } else {
         console.error("No table found in the provided HTML");
@@ -36,7 +36,7 @@ export async function getResult(mis, session, token) {
     };
 
     try {
-        const response = await fetch(REQUEST_URL, requestOptions);
+        const response = await fetch(String(REQUEST_URL), requestOptions);
         const blob = await response.text();
         return extractTableFromHTML(blob);
     } catch (error) {

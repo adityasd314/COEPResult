@@ -25,7 +25,6 @@ export default function Page({ params }: { params: { mis: string } }) {
                 />
                 <Button
                     onClick={() => {
-                        console.log("clicked");
                         getTokens(mis, password).then((res) => {
                             if (res === undefined) {
                                 return;
