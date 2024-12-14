@@ -1,5 +1,6 @@
 "use server";
-export async function getTokens(mis: String, password: string) {
+
+export async function getTokens(mis, password) {
     console.log("mis: ", mis);
     console.log("password: ", password);
     let response = await fetch(process.env.SIGNIN_ENDPOINT, {
