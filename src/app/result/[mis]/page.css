@@ -1,0 +1,99 @@
+/* General Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Table Borders */
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Table Header Styling */
+table thead th {
+  background-color: #4CAF50;
+  /* Level 1 Header - Green */
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Alternating Row Colors */
+table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+  /* Light Gray for even rows */
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #fff;
+  /* White for odd rows */
+}
+
+/* Nested Table Level 2 */
+.hiddenCell>.accordian-body>table {
+  background-color: #e8f4fa;
+  /* Light Blue for Level 2 */
+}
+
+.hiddenCell>.accordian-body>table thead th {
+  background-color: #007bff;
+  /* Level 2 Header - Blue */
+  color: white;
+}
+
+.hiddenCell>.accordian-body>table tbody tr:nth-child(even) {
+  background-color: #d9edf7;
+  /* Blue Tint for Level 2 Rows */
+}
+
+/* Nested Table Level 3 */
+.hiddenCell>.accordian-body>.accordian-body>table {
+  background-color: #fef7e8;
+  /* Light Yellow for Level 3 */
+}
+
+.hiddenCell>.accordian-body>.accordian-body>table thead th {
+  background-color: #ffa500;
+  /* Level 3 Header - Orange */
+  color: white;
+}
+
+.hiddenCell>.accordian-body>.accordian-body>table tbody tr:nth-child(even) {
+  background-color: #ffecd9;
+  /* Yellow Tint for Level 3 Rows */
+}
+
+/* Status Labels */
+.label {
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  border-radius: 3px;
+}
+
+.label-success {
+  background-color: #28a745;
+}
+
+.label-warning {
+  background-color: #ffc107;
+}
+
+.label-danger {
+  background-color: #dc3545;
+}
+
+/* Hover Effect */
+table tbody tr:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
