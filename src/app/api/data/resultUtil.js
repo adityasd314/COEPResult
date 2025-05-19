@@ -1,5 +1,5 @@
 const determineDatabaseCollection = function ( yearOfStudy, semester ) {
-    const currentYear = 2023;
+    const currentYear = new Date().getFullYear()-1;
     const yearMap = {
         "FY":1,"SY":2,"TY":3,"BY":4
     }
