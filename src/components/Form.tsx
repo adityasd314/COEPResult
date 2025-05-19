@@ -63,7 +63,9 @@ export function UserForm({ data, setData }: any) {
     });
     const predictByMIS = function (mis: String) {
         const possibleYearOfStudy = ["FY", "SY", "TY", "BY"];
-        let year = 2024 - (2000 + Number(mis.slice(2, 4)));
+            const currentYear = new Date().getFullYear()-1;
+
+        let year = currentYear - (2000 + Number(mis.slice(2, 4)));
         const isDSY = mis[1] == "4";
         console.log({ year });
         console.log(possibleYearOfStudy[year]);
