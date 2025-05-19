@@ -81,7 +81,9 @@ export function UserForm({ data, setData }: any) {
         console.log(data);
         setLoading(true);
         axios
-            .post("/api/data", data)
+            .post("/api/data", data, {headers: {
+                "cache":"no-store"
+            }})
             .then((res) => {
                 console.log(res);
                 setData(res.data);
