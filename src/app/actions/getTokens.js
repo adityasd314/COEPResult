@@ -10,6 +10,7 @@ export async function getTokens(mis, password) {
             "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
             "x-requested-with": "XMLHttpRequest",
         },
+        cache: "no-store",   
         referrer: "http://portal.coep.org.in/SignUp",
         referrerPolicy: "strict-origin-when-cross-origin",
         body: `UserName=${mis}&Password=${password}`,
