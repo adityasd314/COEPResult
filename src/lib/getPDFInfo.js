@@ -2,7 +2,7 @@
 const PDFExtract = require('pdf.js-extract').PDFExtract;
 const { readFileSync } = require('fs');
 const { parseGradeReport } = require('./parseGradeReport');
-
+const {transformData} = require("./transformData")
 
 module.exports.getPDFInfo =function (filename, callback) {
 
@@ -18,6 +18,7 @@ module.exports.getPDFInfo =function (filename, callback) {
 
         }, "").split("\n")
         const response = parseGradeReport(raw);
+        console.log(transformData(response))
         callback(response);
     });
    

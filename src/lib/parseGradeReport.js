@@ -25,7 +25,7 @@ module.exports.parseGradeReport = function parseGradeReport(data) {
         report_details: {
             type: "Provisional Grade Report",
             date: "",
-            note: "This is a system generated Provisional Grade Report. No signature is required.",
+        note: "This is a system generated Provisional Grade Report. No signature is required.",
             honors_minor_note: "Respective Credits and Grades are not considered towards total Credits acquired and calculations of SGPA and CGPA."
         }
     };

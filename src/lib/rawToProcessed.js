@@ -8,16 +8,15 @@ const rawToProcessed = (anyYearDB)=>{
            const isFirstNumber = !isNaN(x.split(" ")[0]);
            const courseNamePattern = /[A-Z]{2}-[0-9]{5}/g
            const isCoursePresent = x.match(courseNamePattern)
-            
            if(!isFirstNumber && (decimalMatches ||isCoursePresent ) ){
-                let k = i - 1;
-                while(k >= 0 && isNaN(arr[k].split(" ")[0])){
+               let k = i - 1;
+               while(k >= 0 && isNaN(arr[k].split(" ")[0])){
                     k--;
                 }
-               temp[k] += ` ${temp[i]}`
-               
-           }
-       })
+                temp[k] += ` ${temp[i]}`
+                
+            }
+        })
         
         return temp.filter((x) => !isNaN(x.split(" ")[0]))
     }).flat()

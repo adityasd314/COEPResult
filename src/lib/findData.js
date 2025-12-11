@@ -12,7 +12,7 @@ async function run() {
     const results = database.collection('secondyears');
 
     // Define the regex pattern to match '10' at the 4th and 5th positions from the end
-    const match =async (e)=>{
+    const match = async (e)=>{
     const regex = new RegExp(`.{15}${e}.{3}$`);
 
     // Aggregation pipeline to convert _id to string and match with regex

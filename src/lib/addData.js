@@ -8,8 +8,8 @@ const client = new MongoClient(uri);
 
 async function run() {
   try {
-    const database = client.db('2023242');
-    const results = database.collection('btechyears');
+    const database = client.db('2024252');
+    const results = database.collection('thirdyears');
     // const dataToInsert = {};
 
     // const MIS = "612203036";
@@ -18,8 +18,8 @@ async function run() {
     // console.log(hexString);
     // const data = await results.findOne({_id:new ObjectId(hexString)});
     // console.log({data})
-    // const data = secondYearDB.map(getJSONByDepartmentStrings).flat();
-    const data = tempDB;
+    const data = secondYearDB.map(getJSONByDepartmentStrings).flat();
+    // const data = secondYearDB;
     const dataToInsert =data.map(([MIS, resultString])=>{
         const hexString = MIS.toString(16).padStart(24, '0');
         console.log({MIS, resultString})
